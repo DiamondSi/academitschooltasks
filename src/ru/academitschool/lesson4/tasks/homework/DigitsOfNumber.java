@@ -11,7 +11,7 @@ public class DigitsOfNumber {
         int number = scanner.nextInt();
         int sum = 0;
         int oddSum = 0;
-        int max = 0;
+        int max = number % 10;
         int i = number;
 
         do {
