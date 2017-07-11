@@ -9,7 +9,7 @@ public class ArithmeticalMeanDoWhile {
         int numberOfNumbers = 0;
         int i = firstNumber;
         do {
-            sum += firstNumber;
+            sum += i;
             ++i;
             ++numberOfNumbers;
         } while (i <= lastNumber);
