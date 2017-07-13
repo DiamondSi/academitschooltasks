@@ -15,6 +15,7 @@ public class EuclideanAlgorithm {
             }
         }
         int greatestCommonDivisor = a + b;
-        System.out.printf("a: %d, b: %d, Greatest Common Divisor: %d", firstNumber, secondNumber, greatestCommonDivisor);
+        System.out.printf("first number: %d, second number: %d, Greatest Common Divisor: %d",
+                firstNumber, secondNumber, greatestCommonDivisor);
     }
 }
