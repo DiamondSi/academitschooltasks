@@ -1,7 +1,7 @@
 package ru.academitschool.lesson5.tasks;
 
 // 5.13
-public class MultipleFour {
+public class MultipleFourSquareMean {
     public static void main(String[] args) {
         for (int i = 100; i >= 1; i--) {
             if (i % 4 == 0) {
