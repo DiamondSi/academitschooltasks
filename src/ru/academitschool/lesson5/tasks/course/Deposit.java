@@ -6,20 +6,29 @@ import java.util.Scanner;
 public class Deposit {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите сумму первоначального взноса:");
 
-        long primaryPayment = 10000;
-        int interestRate = 10;
-        int depositTerm = 10;
-        final int MONTHS_A_YEAR =12;
-        long accountBalance = primaryPayment;
-        long incomingBalance = primaryPayment;
+        System.out.print("Введите сумму первоначального взноса:");
+        long primaryPayment = scanner.nextLong();
+        long primaryPaymentCent = primaryPayment * 100;
+        System.out.print("Введите процентную ставку (%% в год):");
+        int interestRate = scanner.nextInt();
+        System.out.print("Введите срол депозита (месяцев):");
+        int depositTerm = scanner.nextInt();
+
+        final int MONTHS_OF_THE_YEAR = 12;
+        long accountBalance = primaryPaymentCent;
+        long incomingBalance = 0;
+
+        System.out.printf("           остаток на начало месяца: %10.2f;      первоначальный взнос: %10.2f;" +
+                        " остаток по вкладу: %10.2f%n", (double) incomingBalance, (double) primaryPayment,
+                (double) accountBalance / 100);
+        incomingBalance = accountBalance;
         for (int i = 1; i <= depositTerm; i++) {
-//            incomingBalance=
-            long interest = (incomingBalance * interestRate / 100)/MONTHS_A_YEAR;
-            accountBalance += incomingBalance + interest;
-            System.out.printf("month: %2d; incoming balance: %10d; interest: %10d; account balance: %10d%n",
-                    i, incomingBalance, interest, accountBalance);
+            long interest = incomingBalance * interestRate / 100 / MONTHS_OF_THE_YEAR;
+            accountBalance = incomingBalance + interest;
+            System.out.printf("месяц: %2d; остаток на начало месяца: %10.2f; ежемесячная капитализация: %10.2f;" +
+                            " остаток по вкладу: %10.2f%n", i, (double) incomingBalance / 100, (double) interest / 100,
+                    (double) accountBalance / 100);
             incomingBalance = accountBalance;
         }
     }
