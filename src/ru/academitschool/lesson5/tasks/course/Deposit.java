@@ -31,5 +31,7 @@ public class Deposit {
                     (double) accountBalance / 100);
             incomingBalance = accountBalance;
         }
+        long profit = accountBalance - primaryPaymentCent;
+        System.out.printf("Прибыль: %10.2f", (double) profit / 100);
     }
 }
