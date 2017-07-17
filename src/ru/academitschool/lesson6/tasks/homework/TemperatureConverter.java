@@ -8,16 +8,16 @@ public class TemperatureConverter {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите температуру в градусах Цельсия: ");
-        int celsius = scanner.nextInt();
-        System.out.println(convertCelsiusToFahrenheit(celsius) + "F");
-        System.out.println(convertCelsiusToKelvin(celsius) + "K");
+        double celsius = scanner.nextDouble();
+        System.out.printf("%10.2f F%n",convertCelsiusToFahrenheit(celsius));
+        System.out.printf("%10.2f K%n",convertCelsiusToKelvin(celsius) );
     }
-    public static double convertCelsiusToFahrenheit(int celsius) {
-        return (double)celsius * 9 / 5 + 32;
+    public static double convertCelsiusToFahrenheit(double celsius) {
+        return celsius * 9 / 5 + 32;
     }
 
-    public static int convertCelsiusToKelvin(int celsius) {
-        final int ABSOLUTE_ZERO = 273;
+    public static double convertCelsiusToKelvin(double celsius) {
+        final double ABSOLUTE_ZERO = 273.15;
         return celsius + ABSOLUTE_ZERO;
     }
 }
