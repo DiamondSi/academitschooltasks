@@ -12,8 +12,8 @@ public class TemperatureConverter {
         System.out.println(convertCelsiusToFahrenheit(celsius) + "F");
         System.out.println(convertCelsiusToKelvin(celsius) + "K");
     }
-    public static int convertCelsiusToFahrenheit(int celsius) {
-        return celsius * 9 / 5 + 32;
+    public static double convertCelsiusToFahrenheit(int celsius) {
+        return (double)celsius * 9 / 5 + 32;
     }
 
     public static int convertCelsiusToKelvin(int celsius) {
