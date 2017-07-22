@@ -35,4 +35,11 @@ public class Range {
     public void setIntervalLength(double intervalLength) {
         this.intervalLength = intervalLength;
     }
+
+    public boolean isInside(double point){
+        if (point > this.getFrom() && point <this.getTo()){
+            return true;
+        }
+        return false;
+    }
 }

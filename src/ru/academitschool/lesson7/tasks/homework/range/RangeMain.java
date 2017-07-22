@@ -5,5 +5,6 @@ public class RangeMain {
     public static void main(String[] args) {
         Range range = new Range(10,20);
         System.out.println(range.getIntervalLength());
+        System.out.println(range.isInside(15));
     }
 }
