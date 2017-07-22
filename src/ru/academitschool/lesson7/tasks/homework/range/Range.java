@@ -4,12 +4,10 @@ package ru.academitschool.lesson7.tasks.homework.range;
 public class Range {
     private double from;
     private double to;
-    private double intervalLength;
 
     public Range(double from, double to) {
         this.from = from;
         this.to = to;
-        this.intervalLength = to-from;
     }
 
     public double getFrom() {
@@ -28,18 +26,11 @@ public class Range {
         this.to = to;
     }
 
-    public double getIntervalLength() {
-        return intervalLength;
+    public double getLength() {
+        return to - from;
     }
 
-    public void setIntervalLength(double intervalLength) {
-        this.intervalLength = intervalLength;
-    }
-
-    public boolean isInside(double point){
-        if (point > this.getFrom() && point <this.getTo()){
-            return true;
-        }
-        return false;
+    public boolean isInside(double point) {
+        return !(point < this.getFrom()) && !(point > this.getTo());
     }
 }

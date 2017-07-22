@@ -3,7 +3,7 @@ package ru.academitschool.lesson8.tasks;
 import java.util.Scanner;
 
 // 8.9
-public class FigureCount {
+public class FiguresCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -11,8 +11,8 @@ public class FigureCount {
         String string = scanner.nextLine();
         int lettersCount = 0;
         int digitsCount = 0;
-        int whiteSpases = 0;
-        int otherFigures = 0;
+        int whiteSpacesCount = 0;
+        int otherFiguresCount = 0;
 
         for (int i = 0; i < string.length(); i++) {
             if (Character.isLetter(string.charAt(i))) {
@@ -20,16 +20,16 @@ public class FigureCount {
             } else if (Character.isDigit(string.charAt(i))) {
                 ++digitsCount;
             } else if (Character.isWhitespace(string.charAt(i))) {
-                ++whiteSpases;
+                ++whiteSpacesCount;
             } else {
-                ++otherFigures;
+                ++otherFiguresCount;
             }
         }
 
         System.out.println("Length of string: " + string.length());
         System.out.println("Letters: " + lettersCount);
         System.out.println("Digits: " + digitsCount);
-        System.out.println("White Spaces: " + whiteSpases);
-        System.out.println("Other Figures: " + otherFigures);
+        System.out.println("White Spaces: " + whiteSpacesCount);
+        System.out.println("Other Figures: " + otherFiguresCount);
     }
 }
