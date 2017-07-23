@@ -31,6 +31,6 @@ public class Range {
     }
 
     public boolean isInside(double point) {
-        return point >= this.getFrom() && point <= this.getTo();
+        return point >= from && point <= to;
     }
 }
