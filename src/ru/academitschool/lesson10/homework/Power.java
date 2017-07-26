@@ -4,7 +4,7 @@ package ru.academitschool.lesson10.homework;
 public class Power {
     public static void main(String[] args) {
         int number = 2;
-        int power = 0;
+        int power = 10;
         System.out.printf("%d ^ %d = %d%n", number, power, calculatePower(number, power));
         System.out.printf("%d ^ %d = %d%n", number, power, calculatePowerByRecursion(number, power));
     }
@@ -20,8 +20,6 @@ public class Power {
     public static int calculatePowerByRecursion(int number, int power) {
         if (power == 0) {
             return 1;
-        } else if (power == 1) {
-            return number;
         } else {
             return number * calculatePowerByRecursion(number, power - 1);
         }
