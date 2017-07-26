@@ -20,8 +20,7 @@ public class Power {
     public static int calculatePowerByRecursion(int number, int power) {
         if (power == 0) {
             return 1;
-        } else {
-            return number * calculatePowerByRecursion(number, power - 1);
         }
+        return number * calculatePowerByRecursion(number, power - 1);
     }
 }
