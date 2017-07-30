@@ -8,9 +8,11 @@ public class UrlTask {
     }
 
     public static String getServer(String url) {
-        if (url.indexOf("/", url.indexOf("://") + 3) >= 0) {
-            return url.substring(url.indexOf("://") + 3, url.indexOf("/", url.indexOf("://") + 3));
+        int startIndex = url.indexOf("://") + 3;
+        int endIndex = url.indexOf("/", startIndex);
+        if (endIndex < 0) {
+            return url.substring(startIndex);
         }
-        return url.substring(url.indexOf("://") + 3);
+        return url.substring(startIndex, endIndex);
     }
 }
