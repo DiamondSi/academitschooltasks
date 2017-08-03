@@ -14,21 +14,21 @@ public class SubstringCount {
                 stringBuilder.append(scanner.nextLine());
             }
             String string = stringBuilder.toString().toLowerCase();
-            System.out.println(string);
+            System.out.println("inp string:" + string);
             int stringLength = string.length();
-            System.out.println(stringLength);
-            System.out.println(substring.length());
+            System.out.println("inp str length:" + stringLength);
+            System.out.println("substr length:" + substring.length());
             int index = 0;
             int count = 0;
             while (index < stringLength) {
                 if (string.indexOf(substring, index) >= 0) {
                     ++count;
                     index += substring.length();
-                }else {
+                } else {
                     ++index;
                 }
             }
-            System.out.println(count);
+            System.out.println("substr count:" + count);
         }
     }
 }
