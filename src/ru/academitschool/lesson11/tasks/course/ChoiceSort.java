@@ -12,25 +12,16 @@ public class ChoiceSort {
     }
 
     public static void sortArray(int[] array) {
-        for (int i = 0; i < array.length; ++i) {
-            int minIndex = getMinIndex(array, i);
-            if (array[i] > array[minIndex]) {
-                int temp = array[i];
-                array[i] = array[minIndex];
-                array[minIndex] = temp;
+        for (int i = 0; i < array.length - 1; ++i) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; ++j) {
+                if (array[i] > array[j]) {
+                    minIndex = j;
+                }
             }
+            int temp = array[i];
+            array[i] = array[minIndex];
+            array[minIndex] = temp;
         }
-    }
-
-    public static int getMinIndex(int[] array, int startIndex) {
-        int min = array[startIndex];
-        int index = startIndex;
-        for (int i = startIndex + 1; i < array.length; ++i) {
-            if (min > array[i]) {
-                min = array[i];
-                index = i;
-            }
-        }
-        return index;
     }
 }
