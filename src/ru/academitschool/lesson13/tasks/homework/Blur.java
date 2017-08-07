@@ -9,13 +9,13 @@ import java.io.IOException;
 public class Blur {
     public static void main(String[] args) throws IOException {
         BufferedImage imageIn = ImageIO.read(new File("image.jpg"));
-        BufferedImage imageOut = ImageIO.read(new File("out.jpg"));
-
         WritableRaster rasterIn = imageIn.getRaster();
-        WritableRaster rasterOut = imageOut.getRaster();
 
         int width = rasterIn.getWidth();
         int height = rasterIn.getHeight();
+
+        BufferedImage imageOut = new BufferedImage(width, height, imageIn.getType());
+        WritableRaster rasterOut = imageOut.getRaster();
 
         final int COLORS_COUNT_IN_RGB = 3;
 
