@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+// 12.21
 public class ConvertFileToUpperCase {
     public static void main(String[] args) throws FileNotFoundException {
         try (Scanner scanner = new Scanner(new FileInputStream("input.txt"));
