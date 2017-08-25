@@ -1,20 +1,26 @@
 package ru.academitschool.lesson11.tasks.course;
+
+import java.util.Arrays;
+
 // 11.23
 public class InsertionSort {
-    public static void sortArray(int[] array) {
-//        boolean isSorted = false;
-        for (int i = 1; i < array.length - 1; ++i) {
-//            isSorted = true;
-            int temp=array[i];
+    public static void main(String[] args) {
+        int[] array = {10, 1, 2, 56, 33, 4};
+        System.out.println(Arrays.toString(array));
+        sortArray(array);
+        System.out.println(Arrays.toString(array));
+    }
 
-            for (int j = i-1; j>0; --j) {
-                if (j==0 || temp >= array[j]) {
-                    temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-//                    isSorted = false;
-                }
+    public static void sortArray(int[] array) {
+        for (int i = 1; i < array.length; ++i) {
+            int temp = array[i];
+            int j = i;
+            while (j > 0 && temp < array[j - 1]) {
+                array[j] = array[j - 1];
+                --j;
             }
+            array[j] = temp;
         }
     }
 }
+
